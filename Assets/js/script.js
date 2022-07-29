@@ -1,3 +1,5 @@
+const dropDownValue = document.getElementById('select');
+
 //Navbar Burger - Mobile
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -21,9 +23,10 @@ document.addEventListener('DOMContentLoaded', () => {
   
   });
 
-//Dropdown Ation
-const careerYearDrop = document.getElementById('career-year-drop-down')
+function onChange() {
+    var text = dropDownValue.options[dropDownValue.selectedIndex].text;
+    console.log(text);
+    return text
+  }
 
-careerYearDrop.addEventListener('click', () => {
-    careerYearDrop.classList.add('is-active')
-})
+dropDownValue.onchange = onChange;

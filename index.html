@@ -58,38 +58,19 @@
     <!-- ############ USER SELECTION ############ -->
     </section>
     <section class="section background-color">
-      <h1 class="title h1">Select the year of the career</h1>
-      <div class="dropdown is-hoverable" id="career-year-drop-down">
-        <div class="dropdown-trigger">
-          <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-            <span>Career Year</span>
-            <span class="icon is-small">
-              <i class="fas fa-angle-down" aria-hidden="true"></i>
-            </span>
-          </button>
+      <h1 class="title h1">Select the career year</h1>
+        <div class="select">
+          <select id="select" onchange="onChange()">
+            <option>Career Year</option>
+            <option>2022</option>
+            <option>2021</option>
+            <option>2020</option>
+            <option>2019</option>
+            <option>2018</option>
+          </select>
         </div>
-        <div class="dropdown-menu" id="dropdown-menu" role="menu">
-          <div class="dropdown-content">
-            <a href="#" class="dropdown-item">
-              Dropdown item
-            </a>
-            <a class="dropdown-item">
-              Other dropdown item
-            </a>
-            <a href="#" class="dropdown-item is-active">
-              Active dropdown item
-            </a>
-            <a href="#" class="dropdown-item">
-              Other dropdown item
-            </a>
-            <hr class="dropdown-divider">
-            <a href="#" class="dropdown-item">
-              With a divider
-            </a>
-          </div>
-        </div>
-      </div>
     </section>
+
     <!-- ############ COOL IMAGE SECTION ############ -->
     <script src="./Assets/js/script.js"></script>
     <script src="./Assets/js/scriptF1.js"></script>

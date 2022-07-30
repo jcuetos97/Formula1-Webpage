@@ -58,9 +58,10 @@
     <!-- ############ USER SELECTION ############ -->
     </section>
     <section class="section background-color">
-      <h1 class="title h1">Select the career year</h1>
+      <h1 class="title h1">Select race year</h1>
         <div class="select">
-          <select id="select" onchange="onChange()">
+          <!-- onchange="onChange()" -->
+          <select id="select" onchange="onSelectingYear()">
             <option>Career Year</option>
             <option>2022</option>
             <option>2021</option>
@@ -70,9 +71,34 @@
           </select>
         </div>
     </section>
-
-    <!-- ############ COOL IMAGE SECTION ############ -->
+    <section class="section background-color">
+      <h1 class="title h1">Select race</h1>
+        <div class="select">
+          <!-- onchange="onChange()" -->
+          <select id="select_race_name" onchange="onSelectingCareerName()">
+            <option value="change-text-race">Wait for races to load</option>
+          </select>
+        </div>
+    </section>
+    <section class="section background-color">
+      <h1 class="title h1">Compare pilots</h1>
+      <h2 class="subtitle is-4">Select Pilot 1</h2>
+        <div class="select">
+          <!-- onchange="onChange()" -->
+          <select id="select_pilot_name1">
+            <option value="change-text-pilot1">Wait for pilots to load</option>
+          </select>
+        </div>
+      <h2 class="subtitle is-4">Select Pilot 2</h2>
+      <div class="select">
+        <!-- onchange="onChange()" -->
+        <select id="select_pilot_name2">
+          <option value="change-text-pilot2">Wait for pilots to load</option>
+        </select>
+      </div>
+    </section>
+    <!-- ############ SCRIPTS ############ -->
     <script src="./Assets/js/script.js"></script>
-    <script src="./Assets/js/scriptF1.js"></script>
+    <!-- <script src="./Assets/js/scriptF1.js"></script> -->
   </body>
 </html>

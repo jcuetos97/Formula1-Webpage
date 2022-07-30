@@ -1,5 +1,5 @@
 // ######################################################################
-// Variable declaraitons
+// Variable declarations
 // ######################################################################
 var arrFormulaCircuits = [];
 var arrFormulaPilots = [];

@@ -7,7 +7,7 @@ const options = {
   },
 };
 
-//Variables to run the Formula1 API
+//Variables to run the getRacecNames function
 let nYearArray = [];
 let nYear = null;
 var arrFormulaCircuits = [];
@@ -46,7 +46,7 @@ function onSelectingYear() {
   getRacecNames(nYearArray);
 }
 
-// // JBE:Default options for the api, includes the credentials, and host to get the information
+//JBE:Default options for the api, includes the credentials, and host to get the information
 function getRacecNames(nYearArray) {
   var szUrlFormula1 =
     "https://api-formula-1.p.rapidapi.com/races?type=race&season=" +
@@ -60,8 +60,6 @@ function getRacecNames(nYearArray) {
     .then(function (data) {
       arrFormulaCircuits = [];
       // JBE:Uncomment to debug reponse from api
-      // console.log("aqui", data.response)
-      // console.log("aqui", data.response[1].circuit.id)
       for (var i = 0; i < data.response.length; i++) {
         if (data.response[i].status === "Completed") {
           arrFormulaCircuits.push({
@@ -76,6 +74,7 @@ function getRacecNames(nYearArray) {
     .catch((err) => console.error(err));
 }
 
+//Put Career names in the HTML Dropdown
 function putCareerNames(arrFormulaCircuits) {
   document.querySelector("option[value=change-text-race]").text = "Ready to search Race";
   console.log(arrFormulaCircuits);
@@ -88,6 +87,7 @@ function putCareerNames(arrFormulaCircuits) {
   }
 }
 
+//Select the career name from the dropdown
 function onSelectingCareerName() {
   let dropDownValue = document.getElementById("select_race_name").value;
   let raceName = dropDownValue;
@@ -97,11 +97,14 @@ function onSelectingCareerName() {
   callPilotAPI(IDraceName.nRaceYearId)
 }
 
+//Get the Pilot values based on the race from the API
 function callPilotAPI(IDraceName) {
   // JBE: Build the url to get a certain year of racing.
   var szUrlFormula1Rankings =
     "https://api-formula-1.p.rapidapi.com/rankings/races?race=" + IDraceName;
 
+  
+  //TODO: Check with Jorge if we can delete this, we already have these values in the first lines of codes
   const options2 = {
     method: "GET",
     headers: {
@@ -128,6 +131,7 @@ function callPilotAPI(IDraceName) {
     .catch((err) => console.error(err));
 }
 
+//Put Pilot names in the HTML Dropdown
 function putPilotNames(arrFormulaPilots) {
   document.querySelector("option[value=change-text-pilot1]").text = "Ready to search Pilot"
   for (let i=0; i<arrFormulaPilots.length; i++) {
@@ -147,5 +151,7 @@ function putPilotNames(arrFormulaPilots) {
   }
 }
 
+//TODO: Make some global variables to save Pilot Names and Pilot Race Name,
+//Because Jorge's function will need them.
 //Pilot Names
 //Pilot Race Name

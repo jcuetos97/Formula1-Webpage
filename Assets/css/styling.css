@@ -37,6 +37,7 @@
 /*############ HOW TO USER THIS PAGE SECTION ###########*/
 .background-color {
     background-color: var(--color-bg);
+    padding-top: 20px;
 }
 
 .h1 {
@@ -86,8 +87,12 @@ li {
         justify-content: center;
     }
 
-    .my-select::after{
-        align-items: center;
-        justify-content: center;
+    .select:not(.is-multiple):not(.is-loading)::after {
+        right: 2em
+    }
+
+    .navbar-link:not(.is-arrowless)::after, .select:not(.is-multiple):not(.is-loading)::after {
+        position: inherit;
+        top: 0px;
     }
 }

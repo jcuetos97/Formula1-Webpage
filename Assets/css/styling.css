@@ -7,7 +7,6 @@
     --transition: all 400ms ease;
 }
 
-
 /*############ NAVBAR SECTION ###########*/
 .my-nav-bar {
     font-family: 'Montserrat', sans-serif;
@@ -126,11 +125,12 @@ li {
 }
 
 .h2 {
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 21px;
+    font-weight: 550;
 }
 
-a {
+.authors a {
+    font-size: 21px;
     text-decoration: none;
     color: black;
 }
@@ -204,7 +204,6 @@ div.clip-path-container {
     text-align: center;
 }
   
-  
 .description-holder p {
     font-size: 12px;
     margin-top: 25px;
@@ -212,7 +211,6 @@ div.clip-path-container {
     text-transform: none;
     color: aliceblue;
 }
-  
 
 .espinosa {
     background-image: url('https://avatars.githubusercontent.com/u/105081149?v=4');

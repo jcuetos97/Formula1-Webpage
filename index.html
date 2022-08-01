@@ -87,7 +87,6 @@
     <section class="section background-color">
       <h1 class="title h1">Select race year</h1>
         <div class="select my-select">
-          <!-- onchange="onChange()" -->
           <select id="select" onchange="onSelectingYear()">
             <option>Career Year</option>
             <option>2022</option>
@@ -101,7 +100,6 @@
     <section class="section background-color">
       <h1 class="title h1">Select race</h1>
         <div class="select my-select">
-          <!-- onchange="onChange()" -->
           <select id="select_race_name" onchange="onSelectingCareerName()">
             <option value="change-text-race">Wait for races to load</option>
           </select>
@@ -111,18 +109,20 @@
       <h1 class="title h1">Compare pilots</h1>
       <h2 class="subtitle">Select Pilot 1</h2>
         <div class="select my-select">
-          <!-- onchange="onChange()" -->
-          <select id="select_pilot_name1">
+          <select id="select_pilot_name1" onchange="onSelectingPilot1()">
             <option value="change-text-pilot1">Wait for pilots to load</option>
           </select>
         </div>
       <h2 class="subtitle">Select Pilot 2</h2>
       <div class="select my-select">
-        <!-- onchange="onChange()" -->
-        <select id="select_pilot_name2">
+        <select id="select_pilot_name2" onchange="onSelectingPilot2()">
           <option value="change-text-pilot2">Wait for pilots to load</option>
         </select>
       </div>
+    </section>
+    <section class="section background-color" id="user-final-answer">
+    </section>
+    <section class="section background-color" id="pilot-section">
     </section>
     <!-- ############ SCRIPTS ############ -->
     <script src="./Assets/js/script.js"></script>

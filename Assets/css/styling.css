@@ -95,4 +95,9 @@ li {
         position: inherit;
         top: 0px;
     }
+
+    /* button for the user selection */
+    .my-button {
+        left: 35%;
+    }
 }

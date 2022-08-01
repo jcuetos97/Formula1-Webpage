@@ -34,9 +34,10 @@
     color: var(--color-h1);
 }
 
-/*############ HOW TO SECTION ###########*/
+/*############ HOW TO USER THIS PAGE SECTION ###########*/
 .background-color {
     background-color: var(--color-bg);
+    padding-top: 20px;
 }
 
 .h1 {
@@ -57,6 +58,46 @@ li {
     padding-bottom: 5px
 } 
 
+/* User Selection Section */
 .dropdown-menu {
     position: inherit;
+}
+
+/* Responsiveness */
+@media (max-width: 700px){ 
+    .h1 {
+        color: var(--color-h1);
+        text-align: center;
+    }
+
+    .subtitle {
+        text-align: center;
+    }
+
+    ul {
+        list-style-type:none;
+        padding-left: 0rem;
+        text-align: center;
+    }
+
+    /* Dropdown */
+    .my-select{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .select:not(.is-multiple):not(.is-loading)::after {
+        right: 2em
+    }
+
+    .navbar-link:not(.is-arrowless)::after, .select:not(.is-multiple):not(.is-loading)::after {
+        position: inherit;
+        top: 0px;
+    }
+
+    /* button for the user selection */
+    .my-button {
+        left: 35%;
+    }
 }

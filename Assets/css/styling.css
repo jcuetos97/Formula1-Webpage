@@ -7,12 +7,30 @@
     --transition: all 400ms ease;
 }
 
+
 /*############ NAVBAR SECTION ###########*/
 .my-nav-bar {
     font-family: 'Montserrat', sans-serif;
     background-color: var(--color-navbar);
     margin: 0;
     padding: 0;
+}
+
+.navbar-brand {
+    height: 55px;
+}
+
+/*############ NAVBAR ICON ###########*/
+.navbar-item img {
+   max-height: 55px;
+} 
+
+.navbar-item img:hover {
+    transform: scale(1.2);
+ } 
+
+.navbar-burger {
+    height: none;
 }
 
 /*############ HEADER IMAGE SECTION ###########*/
@@ -34,7 +52,7 @@
     color: var(--color-h1);
 }
 
-/*############ HOW TO USER THIS PAGE SECTION ###########*/
+/*############ HOW TO USE THIS PAGE SECTION ###########*/
 .background-color {
     background-color: var(--color-bg);
     padding-top: 20px;
@@ -101,3 +119,113 @@ li {
         left: 35%;
     }
 }
+
+/*############ ABOUT US PAGE ###########*/
+.text-center {
+    text-align: center;
+}
+
+.h2 {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: white
+}
+
+.columns {
+    line-height: 150%;
+    margin-top: 25px;
+}
+
+body {
+    line-height: 0;
+}
+  
+div.clip-path-container {
+    display: inline-block;
+    position: relative;
+    height: 215px;
+    width: 215px;
+    margin: 15px ;
+    padding: 3px;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    overflow: hidden;  
+    border-radius: 50%;
+    border-collapse: separate; 
+    background-color: #222;
+}
+  
+.clip-path-container:focus,
+.clip-path-container:active,
+.clip-path-container:hover {
+    border-radius: 50%;
+    outline: none;
+    transform: scale(1.1);
+} 
+  
+.bio {
+    height: 215px;
+    width: 215px;
+    background-size: cover;
+    transition: all .2s ease-in-out; 
+    outline: none;
+    transform: scale(1.1);
+    overflow: hidden;  
+    clip-path: polygon(0 100%, 0 0, 100% 0, 100% 100%);
+    clip-path: polygon(0 100%, 0 0, 100% 0, 100% 100%);
+}
+  
+  
+.clip-path-container:hover .bio {
+    clip-path: polygon(100% 100%, 100% 0, 100% 0, 100% 100%);    
+}
+  
+.clip-path-container:hover .description-holder { 
+    left: 20px;
+    opacity: 1;
+}
+  
+.description-holder {
+    position: absolute;
+    top: 35px;
+    height: 300px;
+    width: 250px;
+    transition: all .4s ease-in-out;
+    transition-delay: .1s;
+    opacity: 0;
+    text-align: center;
+}
+  
+  
+.description-holder p {
+    font-size: 12px;
+    margin-top: 25px;
+    max-width: 170px;
+    text-transform: none;
+    color: aliceblue;
+}
+  
+
+.espinosa {
+    background-image: url('https://avatars.githubusercontent.com/u/105081149?v=4');
+    background-position: 50% 90%;
+}
+  
+.besnier {
+    background-image: url('https://avatars.githubusercontent.com/u/96966964?v=4');
+    background-position: 50% 90%;
+}
+  
+.torres {
+    background-image: url('https://avatars.githubusercontent.com/u/71146674?v=4');
+    background-position: 50% 90%;
+}
+  

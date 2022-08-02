@@ -91,6 +91,11 @@ li {
     font-weight: 500;
 }
 
+/* ############ DOM JS CREATION ########### */
+img {
+    text-align: center;
+}
+
 a {
     text-decoration: none;
     color: black;

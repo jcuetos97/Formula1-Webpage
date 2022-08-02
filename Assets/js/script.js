@@ -13,6 +13,7 @@ let nYear = null;
 var arrFormulaCircuits = [];
 var arrFormulaPilots = [];
 var arrPilotsComparison = [];
+var arrRaceIDAndPilotIDs = [];
 
 //Navbar Burger - Mobile
 document.addEventListener("DOMContentLoaded", () => {
@@ -91,10 +92,12 @@ function putCareerNames(arrFormulaCircuits) {
 
 //Select the career name from the dropdown
 function onSelectingCareerName() {
+  arrRaceIDAndPilotIDs = [];
   let dropDownValue = document.getElementById("select_race_name").value;
   let raceName = dropDownValue;
   console.log(raceName);
   var IDraceName = arrFormulaCircuits.find((o) => o.szRaceName === raceName);
+  arrRaceIDAndPilotIDs.push(IDraceName.nRaceYearId)
   callPilotAPI(IDraceName.nRaceYearId);
 }
 
@@ -104,16 +107,7 @@ function callPilotAPI(IDraceName) {
   var szUrlFormula1Rankings =
     "https://api-formula-1.p.rapidapi.com/rankings/races?race=" + IDraceName;
 
-  //TODO: Check with Jorge if we can delete this, we already have these values in the first lines of codes
-  const options2 = {
-    method: "GET",
-    headers: {
-      "X-RapidAPI-Key": "6ce45788bamshb1899499874cc3bp1c8ec3jsn1441744eec4b",
-      "X-RapidAPI-Host": "api-formula-1.p.rapidapi.com",
-    },
-  };
-
-  fetch(szUrlFormula1Rankings, options2)
+  fetch(szUrlFormula1Rankings, options)
     .then(function (response) {
       return response.json();
     })
@@ -160,6 +154,8 @@ function onSelectingPilot1() {
   let pilotName1 = dropDownValuePilot1;
   console.log(pilotName1);
   arrPilotsComparison.push(pilotName1);
+  var pilot1ID = arrFormulaPilots.find((o) => o.szDriverName === pilotName1);
+  arrRaceIDAndPilotIDs.push(pilot1ID.nDriverId)
 }
 
 function onSelectingPilot2() {
@@ -168,8 +164,14 @@ function onSelectingPilot2() {
   let pilotName2 = dropDownValuePilot2;
   console.log(pilotName2);
   arrPilotsComparison.push(pilotName2);
+  var pilot2ID = arrFormulaPilots.find((o) => o.szDriverName === pilotName2);
+  console.log(pilot2ID)
+  arrRaceIDAndPilotIDs.push(pilot2ID.nDriverId)
+  console.log(arrRaceIDAndPilotIDs)
   userFinalAnswer()
 }
+
+// Formula to get the data from the API
 
 //Ask the user if he/she wants to run the comparison
 function userFinalAnswer() {
@@ -194,6 +196,8 @@ function userFinalAnswer() {
   userFinalAnswerSection.append(button);
   button.onclick = function() {createComparisonDashboard()};
 }
+
+// 
 
 //-------- Pilot Section --------
 function createComparisonDashboard() {

@@ -80,45 +80,6 @@ li {
     position: inherit;
 }
 
-/* Responsiveness */
-@media (max-width: 700px){ 
-    .h1 {
-        color: var(--color-h1);
-        text-align: center;
-    }
-
-    .subtitle {
-        text-align: center;
-    }
-
-    ul {
-        list-style-type:none;
-        padding-left: 0rem;
-        text-align: center;
-    }
-
-    /* Dropdown */
-    .my-select{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .select:not(.is-multiple):not(.is-loading)::after {
-        right: 2em
-    }
-
-    .navbar-link:not(.is-arrowless)::after, .select:not(.is-multiple):not(.is-loading)::after {
-        position: inherit;
-        top: 0px;
-    }
-
-    /* button for the user selection */
-    .my-button {
-        left: 35%;
-    }
-}
-
 /*############ ABOUT US PAGE ###########*/
 .text-center {
     text-align: center;
@@ -225,5 +186,45 @@ div.clip-path-container {
 .torres {
     background-image: url('https://avatars.githubusercontent.com/u/71146674?v=4');
     background-position: 50% 90%;
+}
+
+
+/* Responsiveness */
+@media (max-width: 700px){ 
+    .h1 {
+        color: var(--color-h1);
+        text-align: center;
+    }
+
+    .subtitle {
+        text-align: center;
+    }
+
+    ul {
+        list-style-type:none;
+        padding-left: 0rem;
+        text-align: center;
+    }
+
+    /* Dropdown */
+    .my-select{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .select:not(.is-multiple):not(.is-loading)::after {
+        right: 2em
+    }
+
+    .navbar-link:not(.is-arrowless)::after, .select:not(.is-multiple):not(.is-loading)::after {
+        position: inherit;
+        top: 0px;
+    }
+
+    /* button for the user selection */
+    .my-button {
+        left: 35%;
+    }
 }
   

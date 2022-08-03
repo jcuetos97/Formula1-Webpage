@@ -1,12 +1,32 @@
 /*############ CSS VARIABLES ###########*/
 :root {
-    --color-bg: #FFC93C;
-    --color-font: #e25a28;
-    --color-h1: #155263;
+    --color-bg: #222831;
+    --color-font: #0D7377;
+    --color-h1: #14FFEC;
     --color-navbar: #FFC93C;
     --transition: all 400ms ease;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+/*Removed the scrollbar*/
+::-webkit-scrollbar {
+    display: none;
+}
+
+.my-background-color {
+    background-color: var(--color-bg);
+}
+
+.my-navbar-text-color {
+    color: var(--color-h1);
+}
+
+.my-normal-text-color {
+    color: var(--color-font);
+}
 
 /*############ NAVBAR SECTION ###########*/
 .my-nav-bar {
@@ -62,6 +82,15 @@
     color: var(--color-h1);
 }
 
+.subtitle {
+    color: var(--color-font);
+}
+
+.subtitle strong {
+    color: var(--color-font);
+    font-weight: 700;
+}
+
 .section {
     padding-bottom: 0px;
 }
@@ -73,7 +102,7 @@ ul {
 
 li {
     padding-top: 5px;
-    padding-bottom: 5px
+    padding-bottom: 5px;
 } 
 
 /* User Selection Section */
@@ -93,7 +122,7 @@ li {
 
 a {
     text-decoration: none;
-    color: black;
+    color: var(--color-font);
 }
 
 a:hover {
@@ -204,6 +233,20 @@ div.clip-path-container {
     background-color: var(--color-font);
 }
 
+figure {
+    margin: auto;
+    display: block;
+}
+
+/* Footer */
+.footer-background-color {
+    background-color: #1B2430;
+}
+
+.line-height {
+    line-height:normal;
+}
+
 /* Responsiveness */
 @media (max-width: 700px){ 
     .h1 {
@@ -242,7 +285,7 @@ div.clip-path-container {
         left: 35%;
     }
 
-    .my-image {
+    figure {
         margin: auto;
         display: block;
     }

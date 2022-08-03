@@ -13,6 +13,7 @@ let nYear = null;
 var arrFormulaCircuits = [];
 var arrFormulaPilots = [];
 var arrPilotsComparison = [];
+var arrRaceIDAndPilotIDs = [];
 
 //Navbar Burger - Mobile
 document.addEventListener("DOMContentLoaded", () => {
@@ -91,10 +92,12 @@ function putCareerNames(arrFormulaCircuits) {
 
 //Select the career name from the dropdown
 function onSelectingCareerName() {
+  arrRaceIDAndPilotIDs = [];
   let dropDownValue = document.getElementById("select_race_name").value;
   let raceName = dropDownValue;
   console.log(raceName);
   var IDraceName = arrFormulaCircuits.find((o) => o.szRaceName === raceName);
+  arrRaceIDAndPilotIDs.push(IDraceName.nRaceYearId)
   callPilotAPI(IDraceName.nRaceYearId);
 }
 
@@ -104,16 +107,7 @@ function callPilotAPI(IDraceName) {
   var szUrlFormula1Rankings =
     "https://api-formula-1.p.rapidapi.com/rankings/races?race=" + IDraceName;
 
-  //TODO: Check with Jorge if we can delete this, we already have these values in the first lines of codes
-  const options2 = {
-    method: "GET",
-    headers: {
-      "X-RapidAPI-Key": "6ce45788bamshb1899499874cc3bp1c8ec3jsn1441744eec4b",
-      "X-RapidAPI-Host": "api-formula-1.p.rapidapi.com",
-    },
-  };
-
-  fetch(szUrlFormula1Rankings, options2)
+  fetch(szUrlFormula1Rankings, options)
     .then(function (response) {
       return response.json();
     })
@@ -160,6 +154,8 @@ function onSelectingPilot1() {
   let pilotName1 = dropDownValuePilot1;
   console.log(pilotName1);
   arrPilotsComparison.push(pilotName1);
+  var pilot1ID = arrFormulaPilots.find((o) => o.szDriverName === pilotName1);
+  arrRaceIDAndPilotIDs.push(pilot1ID.nDriverId)
 }
 
 function onSelectingPilot2() {
@@ -168,8 +164,14 @@ function onSelectingPilot2() {
   let pilotName2 = dropDownValuePilot2;
   console.log(pilotName2);
   arrPilotsComparison.push(pilotName2);
+  var pilot2ID = arrFormulaPilots.find((o) => o.szDriverName === pilotName2);
+  console.log(pilot2ID)
+  arrRaceIDAndPilotIDs.push(pilot2ID.nDriverId)
+  console.log(arrRaceIDAndPilotIDs)
   userFinalAnswer()
 }
+
+// Formula to get the data from the API
 
 //Ask the user if he/she wants to run the comparison
 function userFinalAnswer() {
@@ -190,15 +192,48 @@ function userFinalAnswer() {
   button.classList.add("my-button");
   button.textContent = "Run Comparison"
   //giving it color background
-  button.style.backgroundColor = "#e25a28";
+  button.style.backgroundColor = "#FBC687";
   userFinalAnswerSection.append(button);
-  button.onclick = function() {createComparisonDashboard()};
+
+  button.onclick = function() {
+    getDataComparison(arrRaceIDAndPilotIDs);
+    };
+}
+
+// 
+function getDataComparison(arrRaceIDAndPilotIDs){
+  arrCompareData = []
+  // JBE: Build the url to get a certain year of racing.
+  var szUrlFormula1Rankings = 'https://api-formula-1.p.rapidapi.com/rankings/races?race='+ arrRaceIDAndPilotIDs[0];
+  fetch(szUrlFormula1Rankings, options)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    for (var i = 0; i < data.response.length; i++) {
+      if (data.response[i].driver.id === arrRaceIDAndPilotIDs[1] || data.response[i].driver.id === arrRaceIDAndPilotIDs[2]){
+        arrCompareData.push({nDriverId:data.response[i].driver.id
+                            ,szDriverName:data.response[i].driver.name
+                            ,urlImage:data.response[i].driver.image
+                            ,nGridStart:data.response[i].grid
+                            ,nFinishPosition:data.response[i].position
+                            ,szRaceTime:data.response[i].time
+                            ,szTeamName: data.response[i].team.name
+                            ,urlTeamLogo: data.response[i].team.logo
+        });
+      }
+    }
+    console.log(data);
+    console.log(arrCompareData);
+    createComparisonDashboard()
+  })
+  .catch(err => console.error(err));
 }
 
 //-------- Pilot Section --------
 function createComparisonDashboard() {
-  const pilot1 = arrPilotsComparison[0];
-  const pilot2 = arrPilotsComparison[1];
+  const pilot1 = arrPilotsComparison[1];
+  const pilot2 = arrPilotsComparison[0];
   console.log(pilot1)
   console.log(pilot2)
   //Grab pilot-section by ID
@@ -228,10 +263,35 @@ function createComparisonDashboard() {
   //giving classes to that div child
   divComparativeSectionChild.classList.add("notification");
   divComparativeSectionChild.classList.add("is-primary");
-  divComparativeSectionChild.style.backgroundColor = "#e25a28";
+  divComparativeSectionChild.style.backgroundColor = "#FFD460";
   //apending that div to the pilot-section
   pilotSection.append(divComparativeSectionChild);
+  //Div Column Father
+  const divColumnContainer = document.createElement("div");
+  //giving classes to that div child
+  divColumnContainer.classList.add("columns");
+  divColumnContainer.classList.add('my-columns')
+  divColumnContainer.style.backgroundColor = "#FFD460";
+  //apending that div to the pilot-section
+  divComparativeSectionChild.append(divColumnContainer);
+  //Creating DIV Grandchild for Pilot 1
+  const divColumnContainerChildPilot1 = document.createElement("div");
+  //giving classes to that div child
+  divColumnContainerChildPilot1.classList.add("column");
+  divColumnContainerChildPilot1.style.backgroundColor = "#FFD460";
+  //apending that div to the pilot-section
+  divColumnContainer.append(divColumnContainerChildPilot1);
+  //Creating DIV Grandchild for Pilot 2
+  const divColumnContainerChildPilot2 = document.createElement("div");
+  //giving classes to that div child
+  divColumnContainerChildPilot2.classList.add("column");
+  divColumnContainerChildPilot2.style.backgroundColor = "#FFD460";
+  //apending that div to the pilot-section
+  divColumnContainer.append(divColumnContainerChildPilot2);
+
+
   //-------- H2 Section --------
+  //-------- Pilot1 --------
   //Creating Pilot 1 Section using h2 element
   const pilot1h2 = document.createElement("h2");
   //giving pilot1h2 a class of subtitle
@@ -241,7 +301,41 @@ function createComparisonDashboard() {
   //appending text to pitlot1h2
   pilot1h2.appendChild(textPilot1);
   //appending pilot to pilotSection
-  divComparativeSectionChild.append(pilot1h2);
+  divColumnContainerChildPilot1.append(pilot1h2);
+  //Creating img for pilot 1
+  const imagePilot1 = document.createElement("img");
+  imagePilot1.src = arrCompareData[0].urlImage
+  imagePilot1.alt = arrCompareData[0].szDriverName
+  imagePilot1.classList.add('my-image')
+  divColumnContainerChildPilot1.append(imagePilot1);
+  //Creating list for pilot1 information
+  const ulPilot1 = document.createElement("ul");
+  ulPilot1.classList.add('my-ul')
+  divColumnContainerChildPilot1.append(ulPilot1);
+  //Creating first li for race time - pilot1
+  const li1Pilot1 = document.createElement("li");
+  ulPilot1.append(li1Pilot1);
+  li1Pilot1.textContent = `He had a race time of ${arrCompareData[0].szRaceTime}`
+  //Creating second li for position - pilot1
+  const li2Pilot1 = document.createElement("li");
+  ulPilot1.append(li2Pilot1);
+  li2Pilot1.textContent = `He finished at the position No. ${arrCompareData[0].nFinishPosition}`
+  //Creating thrid li for gridstart
+  const li3Pilot1 = document.createElement("li");
+  ulPilot1.append(li3Pilot1);
+  li3Pilot1.textContent = `He started at the ${arrCompareData[0].nGridStart} gridstart`
+  //Creating fourth li for gridstart
+  const li4Pilot1 = document.createElement("li");
+  ulPilot1.append(li4Pilot1);
+  li4Pilot1.textContent = `His team is ${arrCompareData[0].szTeamName}`
+
+  const imageTeam1 = document.createElement("img");
+  imageTeam1.src = arrCompareData[0].urlTeamLogo
+  imageTeam1.classList.add('my-image')
+  divColumnContainerChildPilot1.append(imageTeam1);
+
+
+  //-------- Pilot2 --------
   //Creating Pilot 2 Section using h2 element
   const pilot2h2 = document.createElement("h2");
   //giving pilot1h2 a class of subtitle
@@ -251,7 +345,39 @@ function createComparisonDashboard() {
   //appending text to pitlot1h2
   pilot2h2.appendChild(textPilot2);
   //appending pilot to pilotSection
-  divComparativeSectionChild.append(pilot2h2);
+  divColumnContainerChildPilot2.append(pilot2h2);
+  const imagePilot2 = document.createElement("img");
+  imagePilot2.src = `${arrCompareData[1].urlImage}`
+  imagePilot2.alt = arrCompareData[1].szDriverName
+  imagePilot2.classList.add('my-image')
+  imagePilot2.classList.add('center')
+  divColumnContainerChildPilot2.append(imagePilot2);
+  //Creating list for pilot2 information
+  const ulPilot2 = document.createElement("ul");
+  ulPilot2.classList.add('my-ul')
+  divColumnContainerChildPilot2.append(ulPilot2);
+  const li1Pilot2 = document.createElement("li");
+
+  ulPilot2.append(li1Pilot2);
+  li1Pilot2.textContent = `He had a race time of ${arrCompareData[1].szRaceTime}`
+  //Creating second li for position - pilot1
+  const li2Pilot2 = document.createElement("li");
+  ulPilot2.append(li2Pilot2);
+  li2Pilot2.textContent = `He finished at the position No. ${arrCompareData[1].nFinishPosition}`
+  //Creating thrid li for gridstart
+  const li3Pilot2 = document.createElement("li");
+  ulPilot2.append(li3Pilot2);
+  li3Pilot2.textContent = `He started at the ${arrCompareData[1].nGridStart} gridstart`
+  //Creating fourth li for gridstart
+  const li4Pilot2 = document.createElement("li");
+  ulPilot2.append(li4Pilot2);
+  li4Pilot2.textContent = `His team is ${arrCompareData[1].szTeamName}`
+
+  const imageTeam2 = document.createElement("img");
+  imageTeam2.src = arrCompareData[1].urlTeamLogo
+  imageTeam2.classList.add('my-image')
+  divColumnContainerChildPilot2.append(imageTeam2);
+
 }
 
 //TODO: Make some global variables to save Pilot Names and Pilot Race Name,

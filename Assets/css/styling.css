@@ -79,45 +79,6 @@ li {
     position: inherit;
 }
 
-/* Responsiveness */
-@media (max-width: 700px){ 
-    .h1 {
-        color: var(--color-h1);
-        text-align: center;
-    }
-
-    .subtitle {
-        text-align: center;
-    }
-
-    ul {
-        list-style-type:none;
-        padding-left: 0rem;
-        text-align: center;
-    }
-
-    /* Dropdown */
-    .my-select{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .select:not(.is-multiple):not(.is-loading)::after {
-        right: 2em
-    }
-
-    .navbar-link:not(.is-arrowless)::after, .select:not(.is-multiple):not(.is-loading)::after {
-        position: inherit;
-        top: 0px;
-    }
-
-    /* button for the user selection */
-    .my-button {
-        left: 35%;
-    }
-}
-
 /*############ ABOUT US PAGE ###########*/
 .body-authors {
     background-color: rgba(34, 30, 30, 0.116);
@@ -261,3 +222,63 @@ div.clip-path-container {
     background-color: rgba(116, 114, 114, 0.708);
     color: white;
 }
+
+/* User Selection */
+.my-columns {
+    text-align: center;
+}
+
+.my-ul {
+    list-style-type:none;
+}
+
+.my-button:hover {
+    transition: var(--transition);
+    background-color: var(--color-font);
+}
+
+/* Responsiveness */
+@media (max-width: 700px){ 
+    .h1 {
+        color: var(--color-h1);
+        text-align: center;
+    }
+
+    .subtitle {
+        text-align: center;
+    }
+
+    ul {
+        list-style-type:none;
+        padding-left: 0rem;
+        text-align: center;
+    }
+
+    /* Dropdown */
+    .my-select{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .select:not(.is-multiple):not(.is-loading)::after {
+        right: 2em
+    }
+
+    .navbar-link:not(.is-arrowless)::after, .select:not(.is-multiple):not(.is-loading)::after {
+        position: inherit;
+        top: 0px;
+    }
+
+    /* button for the user selection */
+    .my-button {
+        left: 35%;
+    }
+
+    .my-image {
+        margin: auto;
+        display: block;
+    }
+}
+  
+

@@ -384,3 +384,10 @@ function createComparisonDashboard() {
 //Because Jorge's function will need them.
 //Pilot Names
 //Pilot Race Name
+
+
+
+
+
+
+

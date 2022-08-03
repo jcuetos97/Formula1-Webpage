@@ -8,8 +8,12 @@
 }
 
 /*############ NAVBAR SECTION ###########*/
+
+.body-index {
+    font-family: 'Titillium Web', sans-serif;
+}
+
 .my-nav-bar {
-    font-family: 'Montserrat', sans-serif;
     background-color: var(--color-navbar);
     margin: 0;
     padding: 0;
@@ -80,7 +84,7 @@ li {
 }
 
 /*############ ABOUT US PAGE ###########*/
-.body-authors {
+.body-about-us {
     background-color: rgba(34, 30, 30, 0.116);
     min-height:100vh;
     height: 100%;
@@ -96,7 +100,7 @@ li {
     font-weight: 550;
 }
 
-.authors a {
+.about-us a {
     font-size: 21px;
     text-decoration: none;
     color: black;
@@ -196,19 +200,22 @@ div.clip-path-container {
 
 
 /*############ CURRENT STANDINGS TABLE ###########*/
+.body-live {
+    min-height:100vh;
+    height: 100%;
+    font-family: 'Titillium Web', sans-serif;
+}
+
 .header-table {
     height: 55px;
     justify-content: center;
     display: flex;
     align-items: center;
-    background-color: rgba(220, 217, 217, 0.508);
     padding: 0;
     font-size: 21px;
     border-radius: 25px;
-}
-
-.table {
-    padding: 45px; 
+    background-color: rgba(57, 55, 55, 0.208);
+    margin-bottom: 21px;
 }
 
 .table th, .table td {
@@ -282,3 +289,21 @@ div.clip-path-container {
 }
   
 
+
+/* SlideShow */
+.mySlides {
+    display:none;
+    width:100%;
+}
+
+.w3-content {
+    max-width:300px;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+
+.w3-left, .w3-right, .w3-badge {
+    cursor:pointer
+}
+ 

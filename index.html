@@ -42,6 +42,7 @@
         <div id="navMenu" class="navbar-menu my-background-color">
           <div class="navbar-end my-background-color">
             <a href="./index.html" class="navbar-item my-background-color my-navbar-text-color">Home</a>
+            <a href="./driver-comparison.html" class="navbar-item my-background-color my-navbar-text-color">Driver Comparison</a>
             <a href="./standings.html" class="navbar-item my-background-color my-navbar-text-color">Live Standings</a>
             <a href="./live.html" class="navbar-item my-background-color my-navbar-text-color">Next Career</a>
             <a href="./about-us.html" class="navbar-item my-background-color my-navbar-text-color">About us</a>
@@ -50,82 +51,22 @@
       </div>
     </nav>
   
-    <!-- ############ HOW TO USE THE PAGE SECTION ############ -->
+    <!-- ############ IMAGE ############ -->
     <section class="header-image" id="home_section">
-    </section>
-    <section class="section background-color">
-      <h1 class="title h1" style="padding-bottom: 15px;">How to use this page</h1>
-      <h2 class="subtitle my-normal-text-color">
-        Hey, welcome! In this page you'll be able to <strong>compare</strong> pilots that
-        were competing in a given <strong>career</strong> from the years <strong>2018 to 2022</strong>.
-      </h2>
-      <h2 class="subtitle">
-        Please, read these steps <strong>before comparing pilots</strong>:
-          <ul>
-            <br>
-            <li><strong>Step 1:</strong> Select a year, you can choose <strong>from 2018 to 2022</strong>.</li>
-            <li><strong>Step 2:</strong> Once you have selected the year, <strong>you'll be able to see the races from that year</strong>, choose one from the second dropdown.</li>
-            <li>
-              <strong>Step 3:</strong> Once you have selected the race, 
-              <strong>the pilots that participated in that race</strong> 
-              will be enabled in the third and fourth dropdown. Make sure you select
-              a <strong>different pilot in each dropdown</strong></li>
-          </ul>
-      </h2>
-    <!-- ############ USER SELECTION ############ -->
-    </section>
-    <section class="section background-color">
-      <h1 class="title h1">Select race year</h1>
-        <div class="select my-select">
-          <select id="select" onchange="onSelectingYear()">
-            <option>Career Year</option>
-            <option>2022</option>
-            <option>2021</option>
-            <option>2020</option>
-            <option>2019</option>
-            <option>2018</option>
-          </select>
-        </div>
-    </section>
-    <section class="section background-color">
-      <h1 class="title h1">Select race</h1>
-        <div class="select my-select">
-          <select id="select_race_name" onchange="onSelectingCareerName()">
-            <option value="change-text-race">Wait for races to load</option>
-          </select>
-        </div>
-    </section>
-    <section class="section background-color">
-      <h1 class="title h1">Compare pilots</h1>
-      <h2 class="subtitle">Select Pilot 1</h2>
-        <div class="select my-select">
-          <select id="select_pilot_name1" onchange="onSelectingPilot1()">
-            <option value="change-text-pilot1">Wait for pilots to load</option>
-          </select>
-        </div>
-      <h2 class="subtitle">Select Pilot 2</h2>
-      <div class="select my-select">
-        <select id="select_pilot_name2" onchange="onSelectingPilot2()">
-          <option value="change-text-pilot2">Wait for pilots to load</option>
-        </select>
-      </div>
-    </section>
-    <section class="section background-color" id="user-final-answer">
-    </section>
-    <section class="section background-color" id="pilot-section">
-    </section>
+    
+    <!-- ############ FOOTER ############ -->
     <footer class="footer footer-background-color">
       <div class="content has-text-centered footer-background-color">
         <p class="my-normal-text-color line-height">
-          <strong>F1-Searcher</strong> is made with love 💖 by <a href="https://jgthms.com">David Torres</a>,
+          F1-Searcher is made with love 💖 by <a href="https://jgthms.com">David Torres</a>,
           <a href="http://opensource.org/licenses/mit-license.php">Jorge Besnier</a>. and
           <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Juan José Espinosa</a>.
         </p>
       </div>
     </footer>
+    
     <!-- ############ SCRIPTS ############ -->
-    <script src="./Assets/js/script.js"></script>
+    <script src="./Assets/js/scriptAPI1.js"></script>
     <script src="./Assets/js/scriptAPI2.js"></script>
-    <!-- <script src="./Assets/js/scriptF1.js"></script> -->
   </body>
 </html>

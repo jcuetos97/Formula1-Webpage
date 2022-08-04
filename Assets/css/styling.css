@@ -1,15 +1,41 @@
 /*############ CSS VARIABLES ###########*/
 :root {
-    --color-bg: #FFC93C;
-    --color-font: #e25a28;
-    --color-h1: #155263;
+    --color-bg: #222831;
+    --color-font: #EEEEEE;
+    --color-h1: #14FFEC;
     --color-navbar: #FFC93C;
     --transition: all 400ms ease;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+/*Removed the scrollbar*/
+::-webkit-scrollbar {
+    display: none;
+}
+
+.my-background-color {
+    background-color: var(--color-bg);
+}
+
+.my-navbar-text-color {
+    color: var(--color-h1);
+}
+
+.my-normal-text-color {
+    color: var(--color-font);
+}
+
+
 /*############ NAVBAR SECTION ###########*/
+
+.body-index {
+    font-family: 'Titillium Web', sans-serif;
+}
+
 .my-nav-bar {
-    font-family: 'Montserrat', sans-serif;
     background-color: var(--color-navbar);
     margin: 0;
     padding: 0;
@@ -52,13 +78,26 @@
 }
 
 /*############ HOW TO USE THIS PAGE SECTION ###########*/
-.background-color {
+.background-yellow {
     background-color: var(--color-bg);
-    padding-top: 20px;
 }
 
 .h1 {
     color: var(--color-h1);
+}
+
+.subtitle {
+    color: var(--color-font);
+    margin-top: 25px;
+}
+
+.title:not(.is-spaced)+.subtitle {
+    margin-top: 25px;
+}
+
+.subtitle strong {
+    color: var(--color-font);
+    font-weight: 700;
 }
 
 .section {
@@ -72,7 +111,7 @@ ul {
 
 li {
     padding-top: 5px;
-    padding-bottom: 5px
+    padding-bottom: 5px;
 } 
 
 /* User Selection Section */
@@ -81,6 +120,16 @@ li {
 }
 
 /*############ ABOUT US PAGE ###########*/
+.body-about-us {
+    min-height:100vh;
+    height: 100%;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.authors a, p {
+    color: black;
+}
+
 .text-center {
     text-align: center;
 }
@@ -90,10 +139,10 @@ li {
     font-weight: 550;
 }
 
-.authors a {
+.my-normal-text-color a {
     font-size: 21px;
     text-decoration: none;
-    color: black;
+    color: var(--color-h1);
 }
 
 a:hover {
@@ -188,6 +237,37 @@ div.clip-path-container {
     background-position: 50% 90%;
 }
 
+
+/*############ CURRENT STANDINGS TABLE ###########*/
+.body-live {
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.header-table {
+    height: 55px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    font-size: 21px;
+    border-radius: 25px;
+    background-color: var(--color-bg);
+    margin-bottom: 21px;
+}
+
+.table th, .table td {
+    height: 27px; 
+    border: none;
+    margin-top: 45px;
+    background-color: rgba(220, 217, 217, 0.208);
+    vertical-align: middle;
+}
+
+.table tr:hover {
+    background-color: var(--color-bg);
+    color: white;
+}
+
 /* User Selection */
 .my-columns {
     text-align: center;
@@ -202,6 +282,43 @@ div.clip-path-container {
     background-color: var(--color-font);
 }
 
+figure {
+    margin: auto;
+    display: block;
+}
+
+/* Footer */
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    height: 35px;
+    width: 100%;
+    bottom: 0;
+    padding: 35px;
+}
+
+.footer a {
+    font-size: inherit;
+}
+
+.footer-background-color {
+    background-color: #1B2430;
+}
+
+.line-height {
+    line-height:normal;
+}
+
+.image-width {
+    max-width: 150px;
+}
+
+.logo-height {
+    max-height: 100px;
+}
 /* Responsiveness */
 @media (max-width: 700px){ 
     .h1 {
@@ -240,7 +357,7 @@ div.clip-path-container {
         left: 35%;
     }
 
-    .my-image {
+    figure {
         margin: auto;
         display: block;
     }
@@ -250,3 +367,22 @@ div.clip-path-container {
     text-align: center;
     vertical-align: middle;
 }
+
+
+/* SlideShow */
+.mySlides {
+    display:none;
+    width:100%;
+}
+
+.w3-content {
+    max-width:300px;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+
+.w3-left, .w3-right, .w3-badge {
+    cursor:pointer
+}
+ 

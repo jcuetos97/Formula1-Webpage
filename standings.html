@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>F1 Searcher</title>
+    <!-- ############ Favicon ############ -->
+    <link rel="icon" type="image/x-icon" href="./Assets/Images/icon.png">
+    <!-- ############ Bulma CSS ############ -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <!-- ############ Montserrat Font ############ -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- ############ Titillium Font ############ -->
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Titillium+Web:wght@200;300;400&display=swap" 
+      rel="stylesheet"
+    />
+    <!-- ############ W3 CSS ############ -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- ############ Local Stylesheet ############ -->
+    <link rel="stylesheet" href="./Assets/css/styling.css" />
+  </head>
+  
+  <body class="body-live">
+    <!--############ NAVBAR ############ -->
+    <nav class="navbar my-background-color">
+      <div class="container my-background-color">
+        <div class="navbar-brand" href="./index.html">
+          <a class="navbar-item">
+            <img id="icon" src="./Assets/Images/icon.png">
+          </a>
+          <a role="button" class="navbar-burger my-navbar-text-color" data-target="navMenu" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+        <div id="navMenu" class="navbar-menu my-background-color">
+          <div class="navbar-end my-background-color">
+            <a href="./index.html" class="navbar-item my-background-color my-navbar-text-color">Home</a>
+            <a href="./driver-comparison.html" class="navbar-item my-background-color my-navbar-text-color">Driver Comparison</a>
+            <a href="./standings.html" class="navbar-item my-background-color my-navbar-text-color">Live Standings</a>
+            <a href="./live.html" class="navbar-item my-background-color my-navbar-text-color">Next Career</a>
+            <a href="./about-us.html" class="navbar-item my-background-color my-navbar-text-color">About us</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section class="columns "> 
+      <div class="column"></div>
+      <div class="column"></div>
+      <div class="column w3-content w3-display-container">
+        <img class="mySlides" id="Verstappen-img" src="./Assets/Images/drivers/Max Verstappen.jpg" >
+        <img class="mySlides" id="Leclerc-img" src="./Assets/Images/drivers/Charles Leclerc.jpg">
+        <img class="mySlides" id="Pérez-img" src="./Assets/Images/drivers/Sergio Perez.jpg">
+        <img class="mySlides" id="Russell-img" src="./Assets/Images/drivers/George Russell.jpg">
+        <img class="mySlides" id="Sainz-img" src="./Assets/Images/drivers/Carlos Sainz.jpg">
+        <img class="mySlides" id="Hamilton-img" src="./Assets/Images/drivers/Lewis Hamilton.jpg">
+        <img class="mySlides" id="Norris-img" src="./Assets/Images/drivers/Lando Norris.jpg">
+        <img class="mySlides" id="Ocon-img" src="./Assets/Images/drivers/Esteban Ocon.jpg">
+        <img class="mySlides" id="Bottas-img" src="./Assets/Images/drivers/Valtteri Bottas.jpg">
+        <img class="mySlides" id="Alonso-img" src="./Assets/Images/drivers/Fernando Alonso.jpg">
+        <img class="mySlides" id="Magnussen-img" src="./Assets/Images/drivers/Kevin Magnussen.jpg">
+        <img class="mySlides" id="Ricciardo-img" src="./Assets/Images/drivers/Ricciardo.jpg">
+        <img class="mySlides" id="Gasly-img" src="./Assets/Images/drivers/Pierre Gasly.jpg">
+        <img class="mySlides" id="Vettel-img" src="./Assets/Images/drivers/Sebastian Vettel.jpg">
+        <img class="mySlides" id="Schumacher-img" src="./Assets/Images/drivers/Mick Schumacher.jpg">
+        <img class="mySlides" id="Tsunoda-img" src="./Assets/Images/drivers/Yuki Tsunoda.jpg">
+        <img class="mySlides" id="Zhou-img" src="./Assets/Images/drivers/Zhou Guanyu.jpg">
+        <img class="mySlides" id="Stroll-img" src="./Assets/Images/drivers/Lance Stroll.jpg">
+        <img class="mySlides" id="Albon-img" src="./Assets/Images/drivers/Alexander Albon.jpg">
+        <img class="mySlides" id="Latifi-img" src="./Assets/Images/drivers/Nicholas Latifi.jpg">
+        <img class="mySlides" id="Hülkenberg-img" src="./Assets/Images/drivers/nico-hulkenberg.jpg">
+        <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+          <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+          <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+        </div>
+      </div>
+      <ul class="column">
+        <li id="position-info">Position</li>
+        <li id="name-info">Name</li>
+        <li id="team-info">Team</li>
+      </ul>
+      <div class="column"></div>
+      </section>
+   
+    
+    <!-- ############ CURRENT F1 STANDINGS TABLE ############ -->
+    <table id="table" class="table is-fullwidth">
+      <tr>
+        <p class="header-table my-navbar-text-color">Current Standings</p>
+      </tr>
+      <tr>
+        <th>Position</th>
+        <th>Driver</th>
+        <th>Points</th>
+        <th>Wins</th>
+      </tr>
+    </table>
+  
+    <!-- ############ SCRIPTS ############ -->
+    <script src="./Assets/js/scriptAPI1.js"></script>
+    <script src="./Assets/js/scriptAPI2.js"></script>
+  </body>
+</html>

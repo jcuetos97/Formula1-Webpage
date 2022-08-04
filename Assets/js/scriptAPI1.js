@@ -192,7 +192,7 @@ function userFinalAnswer() {
   button.classList.add("my-button");
   button.textContent = "Run Comparison"
   //giving it color background
-  button.style.backgroundColor = "#FBC687";
+  button.style.backgroundColor = "#0D7377";
   userFinalAnswerSection.append(button);
 
   button.onclick = function() {
@@ -263,7 +263,7 @@ function createComparisonDashboard() {
   //giving classes to that div child
   divComparativeSectionChild.classList.add("notification");
   divComparativeSectionChild.classList.add("is-primary");
-  divComparativeSectionChild.style.backgroundColor = "#FFD460";
+  divComparativeSectionChild.style.backgroundColor = "#2F576E";
   //apending that div to the pilot-section
   pilotSection.append(divComparativeSectionChild);
   //Div Column Father
@@ -271,21 +271,21 @@ function createComparisonDashboard() {
   //giving classes to that div child
   divColumnContainer.classList.add("columns");
   divColumnContainer.classList.add('my-columns')
-  divColumnContainer.style.backgroundColor = "#FFD460";
+  divColumnContainer.style.backgroundColor = "#2F576E";
   //apending that div to the pilot-section
   divComparativeSectionChild.append(divColumnContainer);
   //Creating DIV Grandchild for Pilot 1
   const divColumnContainerChildPilot1 = document.createElement("div");
   //giving classes to that div child
   divColumnContainerChildPilot1.classList.add("column");
-  divColumnContainerChildPilot1.style.backgroundColor = "#FFD460";
+  divColumnContainerChildPilot1.style.backgroundColor = "#2F576E";
   //apending that div to the pilot-section
   divColumnContainer.append(divColumnContainerChildPilot1);
   //Creating DIV Grandchild for Pilot 2
   const divColumnContainerChildPilot2 = document.createElement("div");
   //giving classes to that div child
   divColumnContainerChildPilot2.classList.add("column");
-  divColumnContainerChildPilot2.style.backgroundColor = "#FFD460";
+  divColumnContainerChildPilot2.style.backgroundColor = "#2F576E";
   //apending that div to the pilot-section
   divColumnContainer.append(divColumnContainerChildPilot2);
 
@@ -306,6 +306,7 @@ function createComparisonDashboard() {
   const imagePilot1 = document.createElement("img");
   imagePilot1.src = arrCompareData[0].urlImage
   imagePilot1.alt = arrCompareData[0].szDriverName
+  imagePilot1.classList.add('image-width')
   imagePilot1.classList.add('my-image')
   divColumnContainerChildPilot1.append(imagePilot1);
   //Creating list for pilot1 information
@@ -332,6 +333,7 @@ function createComparisonDashboard() {
   const imageTeam1 = document.createElement("img");
   imageTeam1.src = arrCompareData[0].urlTeamLogo
   imageTeam1.classList.add('my-image')
+  imageTeam1.classList.add('logo-height')
   divColumnContainerChildPilot1.append(imageTeam1);
 
 
@@ -351,6 +353,7 @@ function createComparisonDashboard() {
   imagePilot2.alt = arrCompareData[1].szDriverName
   imagePilot2.classList.add('my-image')
   imagePilot2.classList.add('center')
+  imagePilot2.classList.add('my-image')
   divColumnContainerChildPilot2.append(imagePilot2);
   //Creating list for pilot2 information
   const ulPilot2 = document.createElement("ul");
@@ -376,6 +379,7 @@ function createComparisonDashboard() {
   const imageTeam2 = document.createElement("img");
   imageTeam2.src = arrCompareData[1].urlTeamLogo
   imageTeam2.classList.add('my-image')
+  imageTeam2.classList.add('logo-height')
   divColumnContainerChildPilot2.append(imageTeam2);
 
 }
@@ -409,11 +413,8 @@ function fillNextRace(){
   console.log(nextRace[0].imgCircuitImage);
   imgCircuit.src = nextRace[0].imgCircuitImage;
   imgCircuit.alt = 'image of the next race in season';
-  imgCircuit.classList.add("h2")
   mainDiv.append(imgCircuit);
-  
   console.log('this main div', mainDiv);
-
 
   //insert track name
   const szTrackName = document.createElement("h3");
@@ -466,3 +467,10 @@ window.onload = function() {
 //Because Jorge's function will need them.
 //Pilot Names
 //Pilot Race Name
+
+
+
+
+
+
+

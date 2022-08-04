@@ -32,5 +32,3 @@ Inside the folder "Assets" you'll find:
 
 ## Web Page Link 😏
 <a href="https://davidtc8.github.io/Formula1-Webpage/" target="_blank">Webpage!</a>
-
-## Code Video

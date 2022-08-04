@@ -41,10 +41,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // dropDownValue.onchange = onChange;
 function onSelectingYear() {
+  nYearArray = []
   let dropDownValue = document.getElementById("select").value;
   dropDownValue = parseInt(dropDownValue);
   let nYear = dropDownValue;
   nYearArray.push(nYear);
+  console.log(nYearArray)
   getRacecNames(nYearArray);
 }
 
@@ -232,8 +234,8 @@ function getDataComparison(arrRaceIDAndPilotIDs){
 
 //-------- Pilot Section --------
 function createComparisonDashboard() {
-  const pilot1 = arrPilotsComparison[1];
-  const pilot2 = arrPilotsComparison[0];
+  const pilot1 = arrPilotsComparison[0];
+  const pilot2 = arrPilotsComparison[1];
   console.log(pilot1)
   console.log(pilot2)
   //Grab pilot-section by ID
@@ -351,6 +353,7 @@ function createComparisonDashboard() {
   imagePilot2.alt = arrCompareData[1].szDriverName
   imagePilot2.classList.add('my-image')
   imagePilot2.classList.add('center')
+  imagePilot2.classList.add('image-width')
   divColumnContainerChildPilot2.append(imagePilot2);
   //Creating list for pilot2 information
   const ulPilot2 = document.createElement("ul");

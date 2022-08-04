@@ -28,9 +28,14 @@ html {
     color: var(--color-font);
 }
 
+
 /*############ NAVBAR SECTION ###########*/
+
+.body-index {
+    font-family: 'Titillium Web', sans-serif;
+}
+
 .my-nav-bar {
-    font-family: 'Montserrat', sans-serif;
     background-color: var(--color-navbar);
     margin: 0;
     padding: 0;
@@ -73,9 +78,8 @@ html {
 }
 
 /*############ HOW TO USE THIS PAGE SECTION ###########*/
-.background-color {
+.background-yellow {
     background-color: var(--color-bg);
-    padding-top: 20px;
 }
 
 .h1 {
@@ -111,16 +115,24 @@ li {
 }
 
 /*############ ABOUT US PAGE ###########*/
+.body-about-us {
+    background-color: rgba(34, 30, 30, 0.116);
+    min-height:100vh;
+    height: 100%;
+    font-family: 'Titillium Web', sans-serif;
+}
+
 .text-center {
     text-align: center;
 }
 
 .h2 {
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 21px;
+    font-weight: 550;
 }
 
-a {
+.about-us a {
+    font-size: 21px;
     text-decoration: none;
     color: var(--color-font);
 }
@@ -194,7 +206,6 @@ div.clip-path-container {
     text-align: center;
 }
   
-  
 .description-holder p {
     font-size: 12px;
     margin-top: 25px;
@@ -202,7 +213,6 @@ div.clip-path-container {
     text-transform: none;
     color: aliceblue;
 }
-  
 
 .espinosa {
     background-image: url('https://avatars.githubusercontent.com/u/105081149?v=4');
@@ -217,6 +227,38 @@ div.clip-path-container {
 .torres {
     background-image: url('https://avatars.githubusercontent.com/u/71146674?v=4');
     background-position: 50% 90%;
+}
+
+
+/*############ CURRENT STANDINGS TABLE ###########*/
+.body-live {
+    min-height:100vh;
+    height: 100%;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.header-table {
+    height: 55px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    font-size: 21px;
+    border-radius: 25px;
+    background-color: rgba(57, 55, 55, 0.208);
+    margin-bottom: 21px;
+}
+
+.table th, .table td {
+    height: 27px; 
+    border: none;
+    margin-top: 45px;
+    background-color: rgba(220, 217, 217, 0.208);
+}
+
+.table tr:hover {
+    background-color: rgba(116, 114, 114, 0.708);
+    color: white;
 }
 
 /* User Selection */
@@ -291,3 +333,22 @@ figure {
     }
 }
   
+
+
+/* SlideShow */
+.mySlides {
+    display:none;
+    width:100%;
+}
+
+.w3-content {
+    max-width:300px;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+
+.w3-left, .w3-right, .w3-badge {
+    cursor:pointer
+}
+ 

@@ -30,29 +30,32 @@
   
   <body class="body-live">
     <!--############ NAVBAR ############ -->
-    <nav class="navbar background-yellow">
-      <div class="container background-yellow">
+    <nav class="navbar my-background-color">
+      <div class="container my-background-color">
         <div class="navbar-brand" href="./index.html">
           <a class="navbar-item">
             <img id="icon" src="./Assets/Images/icon.png">
           </a>
-          <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+          <a role="button" class="navbar-burger my-navbar-text-color" data-target="navMenu" aria-label="menu" aria-expanded="false">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
           </a>
         </div>
-        <div id="navMenu" class="navbar-menu background-yellow">
-          <div class="navbar-end background-yellow">
-            <a href="./index.html" class="navbar-item background-yellow">Home</a>
-            <a href="./standings.html" class="navbar-item background-yellow">Live Standings</a>
-            <a href="./live.html" class="navbar-item background-yellow">Next Career</a>
-            <a href="./about-us.html" class="navbar-item background-yellow">About us</a>
+        <div id="navMenu" class="navbar-menu my-background-color">
+          <div class="navbar-end my-background-color">
+            <a href="./index.html" class="navbar-item my-background-color my-navbar-text-color">Home</a>
+            <a href="./driver-comparison.html" class="navbar-item my-background-color my-navbar-text-color">Driver Comparison</a>
+            <a href="./standings.html" class="navbar-item my-background-color my-navbar-text-color">Live Standings</a>
+            <a href="./live.html" class="navbar-item my-background-color my-navbar-text-color">Next Career</a>
+            <a href="./about-us.html" class="navbar-item my-background-color my-navbar-text-color">About us</a>
           </div>
         </div>
       </div>
     </nav>
-    <section class="columns"> 
+    <section class="columns "> 
+      <div class="column"></div>
+      <div class="column"></div>
       <div class="column w3-content w3-display-container">
         <img class="mySlides" id="Verstappen-img" src="./Assets/Images/drivers/Max Verstappen.jpg" >
         <img class="mySlides" id="Leclerc-img" src="./Assets/Images/drivers/Charles Leclerc.jpg">
@@ -80,18 +83,19 @@
           <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
         </div>
       </div>
-        <ul class="column">
-          <li>Position</li>
-          <li>Name</li>
-          <li>Team</li>
-        </ul>
+      <ul class="column">
+        <li id="position-info">Position</li>
+        <li id="name-info">Name</li>
+        <li id="team-info">Team</li>
+      </ul>
+      <div class="column"></div>
       </section>
    
     
     <!-- ############ CURRENT F1 STANDINGS TABLE ############ -->
     <table id="table" class="table is-fullwidth">
       <tr>
-        <p class="header-table">Current Standings</p>
+        <p class="header-table my-navbar-text-color">Current Standings</p>
       </tr>
       <tr>
         <th>Position</th>
@@ -102,8 +106,7 @@
     </table>
   
     <!-- ############ SCRIPTS ############ -->
-    <script src="./Assets/js/script.js"></script>
+    <script src="./Assets/js/scriptAPI1.js"></script>
     <script src="./Assets/js/scriptAPI2.js"></script>
-    <!-- <script src="./Assets/js/scriptF1.js"></script> -->
   </body>
 </html>

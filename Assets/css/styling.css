@@ -1,7 +1,7 @@
 /*############ CSS VARIABLES ###########*/
 :root {
     --color-bg: #222831;
-    --color-font: #0D7377;
+    --color-font: #EEEEEE;
     --color-h1: #14FFEC;
     --color-navbar: #FFC93C;
     --transition: all 400ms ease;
@@ -88,6 +88,11 @@ html {
 
 .subtitle {
     color: var(--color-font);
+    margin-top: 25px;
+}
+
+.title:not(.is-spaced)+.subtitle {
+    margin-top: 25px;
 }
 
 .subtitle strong {
@@ -116,10 +121,13 @@ li {
 
 /*############ ABOUT US PAGE ###########*/
 .body-about-us {
-    background-color: rgba(34, 30, 30, 0.116);
     min-height:100vh;
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
+}
+
+.authors a, p {
+    color: black;
 }
 
 .text-center {
@@ -131,10 +139,10 @@ li {
     font-weight: 550;
 }
 
-.about-us a {
+.my-normal-text-color a {
     font-size: 21px;
     text-decoration: none;
-    color: var(--color-font);
+    color: var(--color-h1);
 }
 
 a:hover {
@@ -232,8 +240,6 @@ div.clip-path-container {
 
 /*############ CURRENT STANDINGS TABLE ###########*/
 .body-live {
-    min-height:100vh;
-    height: 100%;
     font-family: 'Titillium Web', sans-serif;
 }
 
@@ -245,7 +251,7 @@ div.clip-path-container {
     padding: 0;
     font-size: 21px;
     border-radius: 25px;
-    background-color: rgba(57, 55, 55, 0.208);
+    background-color: var(--color-bg);
     margin-bottom: 21px;
 }
 
@@ -254,10 +260,11 @@ div.clip-path-container {
     border: none;
     margin-top: 45px;
     background-color: rgba(220, 217, 217, 0.208);
+    vertical-align: middle;
 }
 
 .table tr:hover {
-    background-color: rgba(116, 114, 114, 0.708);
+    background-color: var(--color-bg);
     color: white;
 }
 
@@ -281,6 +288,22 @@ figure {
 }
 
 /* Footer */
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    height: 35px;
+    width: 100%;
+    bottom: 0;
+    padding: 35px;
+}
+
+.footer a {
+    font-size: inherit;
+}
+
 .footer-background-color {
     background-color: #1B2430;
 }
@@ -340,6 +363,10 @@ figure {
     }
 }
   
+#nextRace {
+    text-align: center;
+    vertical-align: middle;
+}
 
 
 /* SlideShow */

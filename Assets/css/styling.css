@@ -363,6 +363,10 @@ figure {
     }
 }
   
+#nextRace {
+    text-align: center;
+    vertical-align: middle;
+}
 
 
 /* SlideShow */

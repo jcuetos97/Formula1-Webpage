@@ -197,7 +197,7 @@ function userFinalAnswer() {
 
   button.onclick = function() {
     getDataComparison(arrRaceIDAndPilotIDs);
-    };
+  };
 }
 
 // 
@@ -384,6 +384,85 @@ function createComparisonDashboard() {
 
 }
 
+function createImg() {
+
+}
+
+function fillNextRace(){
+  nextRace = JSON.parse(localStorage.getItem("nextRace"));
+  console.log('this next race', nextRace);
+  var mainDiv = document.getElementById('nextRace');
+  mainDiv.classList.add("title")
+
+  //insert competition name szCompetition
+  const szCircuitName = document.createElement("h1");
+  mainDiv.append(szCircuitName);
+  szCircuitName.textContent = nextRace[0].szCompetition;
+  szCircuitName.classList.add("title")
+
+
+  //isnert country szCountry
+  const szCountry = document.createElement("h2");
+  mainDiv.append(szCountry);
+  szCountry.textContent = nextRace[0].szCountry;
+  szCountry.classList.add("h2")
+
+
+  //Insert image to DOM
+  const imgCircuit = document.createElement("img");
+  console.log(nextRace[0].imgCircuitImage);
+  imgCircuit.src = nextRace[0].imgCircuitImage;
+  imgCircuit.alt = 'image of the next race in season';
+  mainDiv.append(imgCircuit);
+  console.log('this main div', mainDiv);
+
+  //insert track name
+  const szTrackName = document.createElement("h3");
+  mainDiv.append(szTrackName);
+  szTrackName.textContent = nextRace[0].szCircuitName;
+  szTrackName.classList.add("h3")
+
+}
+
+window.onload = function() {
+  var nextRace = localStorage.getItem("nextRace");
+  if (nextRace === null){
+    console.log('Call Api')
+    var arrNextRace = [];
+
+    // Return today's date and time
+    var currentTime = new Date()
+
+    // returns the year (four digits)
+    var nCurrentYear = currentTime.getFullYear()
+
+    var szNextRaceUrl = 'https://api-formula-1.p.rapidapi.com/races?type=race&season='+ nCurrentYear + '&next=1';
+      
+    fetch(szNextRaceUrl, options)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      arrNextRace.push({   szCompetition: data.response[0].competition.name
+                          ,szCountry: data.response[0].competition.location.country
+                          ,szCountry: data.response[0].competition.location.city
+                          ,szCircuitName: data.response[0].circuit.name
+                          ,imgCircuitImage: data.response[0].circuit.image
+      })
+      console.log('a local storage', arrNextRace)
+      localStorage.setItem("nextRace", JSON.stringify(arrNextRace));
+    })
+    .then(function () {
+      fillNextRace();
+    })
+    .catch(err => console.error(err));
+  }
+  else{
+    console.log('Call Local Storage');
+    fillNextRace();
+  }
+  
+};
 //TODO: Make some global variables to save Pilot Names and Pilot Race Name,
 //Because Jorge's function will need them.
 //Pilot Names

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>F1 Searcher</title>
     <!-- ############ Favicon ############ -->
-    <link rel="icon" type="image/x-icon" href="./Assets/Images/icon.png">
+    <link rel="icon" type="image/x-icon" href="../Images/icon.png">
     <!-- ############ Bulma CSS ############ -->
     <link
       rel="stylesheet"
@@ -22,16 +22,16 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Titillium+Web:wght@200;300;400&display=swap" 
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./Assets/css/styling.css" />
+    <link rel="stylesheet" href="../css/styling.css" />
   </head>
  
   <body class="body-index my-background-color">
     <!--############ NAVBAR ############ -->
     <nav class="navbar my-background-color">
       <div class="container my-background-color">
-        <div class="navbar-brand" href="./index.html">
-          <a class="navbar-item">
-            <img id="icon" src="./Assets/Images/icon.png">
+        <div class="navbar-brand" href="../../index.html">
+          <a class="navbar-item" href="../../index.html">
+            <img id="icon" src="../Images/icon.png">
           </a>
           <a role="button" class="navbar-burger my-navbar-text-color" data-target="navMenu" aria-label="menu" aria-expanded="false">
             <span aria-hidden="true"></span>
@@ -41,16 +41,16 @@
         </div>
         <div id="navMenu" class="navbar-menu my-background-color">
           <div class="navbar-end my-background-color">
-            <a href="./index.html" class="navbar-item my-background-color my-navbar-text-color">Home</a>
+            <a href="../../index.html" class="navbar-item my-background-color my-navbar-text-color">Home</a>
             <a href="./driver-comparison.html" class="navbar-item my-background-color my-navbar-text-color">Driver Comparison</a>
             <a href="./standings.html" class="navbar-item my-background-color my-navbar-text-color">Live Standings</a>
-            <a href="./live.html" class="navbar-item my-background-color my-navbar-text-color">Next Career</a>
+            <a href="./nextRace.html" class="navbar-item my-background-color my-navbar-text-color">Next Race</a>
             <a href="./about-us.html" class="navbar-item my-background-color my-navbar-text-color">About us</a>
           </div>
         </div>
       </div>
     </nav>
-    <img src="./Assets/Images/authos-car-image.jpg" alt="Car About Us" style="width:100%; height:255px; object-fit:cover">
+    <img src="../Images/authos-car-image.jpg" alt="Car About Us" style="width:100%; height:255px; object-fit:cover">
     </section>
     <section class="section">
     <h1 class="title h1" style="padding-bottom: 15px;">How to use this page</h1>
@@ -113,7 +113,15 @@
     </section>
     <section class="section background-color" id="pilot-section">
     </section>
-
-    <script src="./Assets/js/scriptAPI1.js"></script>
+    <footer class="footer footer-background-color">
+      <div class="content has-text-centered footer-background-color">
+        <p class="my-normal-text-color line-height">
+          F1-Searcher is made with love 💖 by <a href="https://jgthms.com">David Torres</a>,
+          <a href="http://opensource.org/licenses/mit-license.php">Jorge Besnier</a>. and
+          <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Juan José Espinosa</a>.
+        </p>
+      </div>
+    </footer>
+    <script src="../js/scriptAPI1.js"></script>
   </body>
 </html>

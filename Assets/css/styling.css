@@ -1,6 +1,7 @@
 /*############ CSS VARIABLES ###########*/
 :root {
     --color-bg: #222831;
+    --color-bg-light: #aeaeaf92;
     --color-font: #EEEEEE;
     --color-h1: #14FFEC;
     --color-navbar: #FFC93C;
@@ -16,8 +17,13 @@ html {
     display: none;
 }
 
+/*############ TEXT & BACKGROUND COLORS ###########*/
 .my-background-color {
     background-color: var(--color-bg);
+}
+
+.my-background-color-light {
+    background-color: var(--color-bg-light);
 }
 
 .my-navbar-text-color {
@@ -46,6 +52,10 @@ html {
 }
 
 /*############ NAVBAR ICON ###########*/
+#icon {
+    color: #14FFEC;
+}
+
 .navbar-item img {
    max-height: 55px;
 } 
@@ -126,8 +136,8 @@ li {
     font-family: 'Titillium Web', sans-serif;
 }
 
-.authors a, p {
-    color: black;
+.authors a, p, strong {
+    color: var(--color-font);
 }
 
 .text-center {
@@ -146,7 +156,7 @@ li {
 }
 
 a:hover {
-    color: white
+    color:var(--color-h1)
 }
 
 .columns {
@@ -222,6 +232,7 @@ div.clip-path-container {
     color: aliceblue;
 }
 
+/*############ ABOUT US PROFILE PICTURES ###########*/
 .espinosa {
     background-image: url('https://avatars.githubusercontent.com/u/105081149?v=4');
     background-position: 50% 90%;
@@ -287,13 +298,13 @@ figure {
     display: block;
 }
 
-/* Footer */
+/*############ FOOTER ###########*/
 
 .footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
+    position: relative;
     height: 35px;
     width: 100%;
     bottom: 0;
@@ -319,7 +330,9 @@ figure {
 .logo-height {
     max-height: 100px;
 }
-/* Responsiveness */
+
+
+/*############ RESPONSIVENESS ###########*/
 @media (max-width: 700px){ 
     .h1 {
         color: var(--color-h1);
@@ -366,6 +379,7 @@ figure {
 #nextRace {
     text-align: center;
     vertical-align: middle;
+    margin-top: 25px;
 }
 
 
@@ -373,6 +387,7 @@ figure {
 .mySlides {
     display:none;
     width:100%;
+    border-radius: 15px;
 }
 
 .w3-content {

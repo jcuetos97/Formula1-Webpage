@@ -21,17 +21,20 @@ fetch(APIURL)
 function getStandings (data) {
   
   // Creates table rows with F1 information about current standings
-  for (i=0; i < data.MRData.StandingsTable.StandingsLists[0].DriverStandings.length; i++){
+  for (var i=0; i < data.MRData.StandingsTable.StandingsLists[0].DriverStandings.length; i++){
     var table = document.getElementById("table");
     var line = document.createElement("tr");
     line.id = data.MRData.StandingsTable.StandingsLists[0].DriverStandings[i].Driver.familyName;
     table.append(line);
-  
+    
+    
     // When a row is clicked, the image of the selected pilot is displayed 
     document.getElementById(data.MRData.StandingsTable.StandingsLists[0].DriverStandings[i].Driver.familyName).addEventListener("click", function showDriverInfo () {
-      for (t = 0; t < 21; t++) {  
-          document.getElementById(data.MRData.StandingsTable.StandingsLists[0].DriverStandings[t].Driver.familyName + "-img").style.display = "none";  
+          
+      for (var t = 0; t < 21; t++) {  
+          document.getElementById(data.MRData.StandingsTable.StandingsLists[0].DriverStandings[t].Driver.familyName + "-img").style.display = "none";
       }
+      
       document.getElementById(this.id + "-img").style.display = "block";
     });
 
@@ -53,6 +56,9 @@ function getStandings (data) {
   }
   
 };
+
+
+
 
 // Slide Show.
 var slideIndex = 1;

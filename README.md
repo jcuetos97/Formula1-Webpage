@@ -8,6 +8,16 @@ Using a Formula 1 API, we created webpage where you can search career by year an
     - Youtube videos regarding the race
 
 ## Folder Structure 🗺️:
+Inside the folder "Assets" you'll find:
+- CSS Folder:
+    - Styling.CSS we used Bulma CSS
+- HTML Folder:
+    - All the different pages are stored inside this folder.
+- Images Folder:
+    - All the images used for this website are inside this folder.
+- JS Folder:
+    - API1 Script used to compare pilots.
+    - API2 Script used to check the latest standings.
 
 ## Concepts Applied 🧐:
 - [x] API Management 🦴

@@ -401,7 +401,7 @@ function fillNextRace(){
   const szCountry = document.createElement("h2");
   mainDiv.append(szCountry);
   szCountry.textContent = nextRace[0].szCountry;
-  szCircuitName.classList.add("h2")
+  szCountry.classList.add("h2")
 
 
   //Insert image to DOM

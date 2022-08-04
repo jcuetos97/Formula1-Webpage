@@ -302,18 +302,13 @@ function createComparisonDashboard() {
   pilot1h2.appendChild(textPilot1);
   //appending pilot to pilotSection
   divColumnContainerChildPilot1.append(pilot1h2);
-  //creting circle for image
-  const circleImagePilot1 = document.createElement('figure')
-  circleImagePilot1.classList.add('image')
-  circleImagePilot1.classList.add('is-128x128')
-  divColumnContainerChildPilot1.append(circleImagePilot1)
   //Creating img for pilot 1
   const imagePilot1 = document.createElement("img");
   imagePilot1.src = arrCompareData[0].urlImage
   imagePilot1.alt = arrCompareData[0].szDriverName
-  imagePilot1.classList.add('is-rounded')
+  imagePilot1.classList.add('image-width')
   imagePilot1.classList.add('my-image')
-  circleImagePilot1.append(imagePilot1);
+  divColumnContainerChildPilot1.append(imagePilot1);
   //Creating list for pilot1 information
   const ulPilot1 = document.createElement("ul");
   ulPilot1.classList.add('my-ul')
@@ -338,6 +333,7 @@ function createComparisonDashboard() {
   const imageTeam1 = document.createElement("img");
   imageTeam1.src = arrCompareData[0].urlTeamLogo
   imageTeam1.classList.add('my-image')
+  imageTeam1.classList.add('logo-height')
   divColumnContainerChildPilot1.append(imageTeam1);
 
 
@@ -357,6 +353,7 @@ function createComparisonDashboard() {
   imagePilot2.alt = arrCompareData[1].szDriverName
   imagePilot2.classList.add('my-image')
   imagePilot2.classList.add('center')
+  imagePilot2.classList.add('my-image')
   divColumnContainerChildPilot2.append(imagePilot2);
   //Creating list for pilot2 information
   const ulPilot2 = document.createElement("ul");
@@ -382,6 +379,7 @@ function createComparisonDashboard() {
   const imageTeam2 = document.createElement("img");
   imageTeam2.src = arrCompareData[1].urlTeamLogo
   imageTeam2.classList.add('my-image')
+  imageTeam2.classList.add('logo-height')
   divColumnContainerChildPilot2.append(imageTeam2);
 
 }

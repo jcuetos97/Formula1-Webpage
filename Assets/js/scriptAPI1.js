@@ -225,15 +225,18 @@ function getDataComparison(arrRaceIDAndPilotIDs){
     }
     console.log(data);
     console.log(arrCompareData);
-    createComparisonDashboard()
+    // createComparisonDashboard()
+  })
+  .then(function () {
+    createComparisonDashboard(arrCompareData)
   })
   .catch(err => console.error(err));
 }
 
 //-------- Pilot Section --------
-function createComparisonDashboard() {
-  const pilot1 = arrPilotsComparison[1];
-  const pilot2 = arrPilotsComparison[0];
+function createComparisonDashboard(arrCompareData) {
+  const pilot1 = arrCompareData[0].szDriverName;
+  const pilot2 = arrCompareData[1].szDriverName;
   console.log(pilot1)
   console.log(pilot2)
   //Grab pilot-section by ID
@@ -381,10 +384,6 @@ function createComparisonDashboard() {
   imageTeam2.classList.add('my-image')
   imageTeam2.classList.add('logo-height')
   divColumnContainerChildPilot2.append(imageTeam2);
-
-}
-
-function createImg() {
 
 }
 
